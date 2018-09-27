@@ -10,17 +10,15 @@ using System.Windows.Forms;
 
 namespace FinancialApp
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
-            FirstCustomControl ControlObject = new FirstCustomControl();
-            this.Hide();
-            ControlObject.Show();
             sidePanel.Height = button1.Height;
             sidePanel.Top = button1.Top;
-            firstCustomControl1.BringToFront();
+            LoginScreen newobj = new LoginScreen();
+            Application.Run(newobj);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,13 +28,7 @@ namespace FinancialApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            FirstCustomControl ControlObject = new FirstCustomControl();
-            label2.Text = ControlObject.GetUsername();
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -48,7 +40,7 @@ namespace FinancialApp
         {
             sidePanel.Height = button1.Height;
             sidePanel.Top = button1.Top;
-            firstCustomControl1.BringToFront();
+            firstCustomControl2.BringToFront();
         }
         private void panel3_Paint(object sender, EventArgs e)
         {
@@ -60,6 +52,11 @@ namespace FinancialApp
             sidePanel.Height = button4.Height;
             sidePanel.Top = button4.Top;
             secondCustomControl1.BringToFront();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
